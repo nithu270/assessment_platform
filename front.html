@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Platform</title>
+    <link rel="stylesheet" href="front.css">
+    <style>
+        /* Add some basic styles to hide and show the navigation menu */
+        .nav-bar {
+            position: fixed;
+       top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  border-right: 1px solid #ab9fcc;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px; /* add some padding to the nav bar */
+  box-sizing: border-box;
+        }
+        .nav-bar.show {
+            transform: translateX(0);
+        }
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-bar li {
+            margin-bottom: 10px;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.2s ease-in-out;
+        }
+       
+        .nav-bar a:active {
+  color: #ffffff; /* dark gray text color on active */
+}
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            padding-top: 20px;
+        }
+        .three-dots {
+  cursor: pointer;
+  padding-left: 10px;
+  margin-top: 20px; /* adjust this value to your liking */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div>    <img src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="User Logo" class="logo"></div>
+          
+       
+        <div class="toggle-nav" onclick="document.querySelector('.nav-bar').classList.toggle('show')">
+            <span class="three-dots"><b>...</b></span> </div>
+    
+        <div class="nav-bar">
+            <nav>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <ul>
+                    <li><a href="#">My Profile</a></li>
+                    <br>
+                    <li><a href="#">My Progress</a></li>
+                    <br>
+                    <li><a href="#">Settings</a></li>
+                    <br>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1><center>Your Skills, Our Platform, Limitless Possibilities</center></h1>
+    </header>
+    <main>
+        <div class="assessment-grid">
+            <div class="assessment-card">
+                <img src="prog.png" alt="Programming Icon">
+                <h2>Programming</h2>
+                <p>Test your coding skills</p>
+            </div>
+            <div class="assessment-card">
+                <img src="qa.png" alt="Short Answers Icon">
+                <h2>Short Answers</h2>
+                <p>Brief written responses</p>
+            </div>
+            <div class="assessment-card">
+                <img src="match.png" alt="Match the Following Icon">
+                <h2>Match the Following</h2>
+                <p>Connect related items</p>
+            </div>
+            <div class="assessment-card">
+                <img src="aptitude.png" alt="Aptitude Icon">
+                <h2>Aptitude</h2>
+                <p>Assess your general abilities</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script>
+const headerText = "Your Skills, Our Platform, Limitless Possibilities";
+const words = headerText.split(" ");
+const headerElement = document.querySelector("h1");
+
+headerElement.textContent = ""; // clear the initial text
+
+let wordIndex = 0;
+
+function revealWord() {
+  if (wordIndex < words.length) {
+    const word = words[wordIndex];
+    const span = document.createElement("span");
+    span.textContent = word;
+    span.style.opacity = 0; // initial opacity
+    headerElement.appendChild(span);
+    const space = document.createTextNode(" ");
+    headerElement.appendChild(space);
+    // animate the word in
+    setTimeout(() => {
+      span.style.transition = "opacity 0.5s";
+      span.style.opacity = 1;
+    }, 100); // delay the animation by 100ms
+
+    wordIndex++;
+    setTimeout(revealWord, 300); // reveal next word after 1.5 seconds
+  }
+}
+
+revealWord();
+const navBar = document.querySelector('.nav-bar');
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.toggle-nav') && !e.target.closest('.nav-bar')) {
+    navBar.classList.remove('show');
+  }
+});</script>
+
+</html>

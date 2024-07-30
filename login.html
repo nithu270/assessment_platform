@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Platform - Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Login to Assessment Platform</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button style="font-family: Verdana, Geneva, Tahoma, sans-serif"type="submit"><b>Login</b></button>
+            </form>
+            <p id="error-message"></p>
+        </div>
+    </div>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #23042f;
+    }
+    
+    .container {
+        max-width: 550px;
+        margin: 90px auto;
+        padding: 50px;
+        background-color: #ab9fcc;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 100px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .login-form {
+        margin: 20px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+    }
+    
+    button[type="submit"] {
+        background-color: #ab9fcc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #23042f;
+    }
+    
+    #error-message {
+        color: brown;
+        margin-top: 10px;
+    }</style>
+  
+    
+</body>
+</html>
